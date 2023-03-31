@@ -1,16 +1,23 @@
-let courseElement = document.querySelector(".js-course");
-let sumElement = document.querySelector(".js-sum");
-let formElement = document.querySelector(".js-form");
-let resultElement = document.querySelector(".js-result");
+{
+    const onFormSubmit = (event) => {
+            event.preventDefault();
+            
+            const courseElement = document.querySelector(".js-course");
+            const sumElement = document.querySelector(".js-sum");
+            const resultElement = document.querySelector(".js-result");
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+            const course = courseElement.value;
+            const sum = sumElement.value;
 
-    let course = courseElement.value;
-    let sum = sumElement.value;
+            let result = sum / course;
 
-    let result = sum / course;
+            resultElement.value = `${sum} ZŁ = ${result.toFixed(2)} EURO`;
+        };
+    
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
 
-    resultElement.value = `${sum} ZŁ = ${result.toFixed(2)} EURO`;
-});
-
+        formElement.addEventListener("submit", onFormSubmit);
+    }
+    init();
+}
