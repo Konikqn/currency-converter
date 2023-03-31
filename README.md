@@ -16,4 +16,4 @@ This is simple currency calculator.
 3. Normalize, 
 4. JavaScript, 
 5. BEM convention, 
-6. Git.
+6. Git
